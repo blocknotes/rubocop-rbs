@@ -1,3 +1,14 @@
+AllCops:
+  TargetRubyVersion: 3.0.0
+
 Naming/FileName:
  Exclude:
    - lib/rubocop-rbs.rb
+
+Style/ClassVars:
+  Exclude:
+    - lib/rubocop/cop/rbs/method_signature.rb
+
+Style/Documentation:
+  Exclude:
+    - lib/rubocop/rbs.rb
