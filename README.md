@@ -1,5 +1,7 @@
 # RuboCop RBS
 
+[![Gem Version](https://badge.fury.io/rb/rubocop-rbs.svg)](https://badge.fury.io/rb/rubocop-rbs)
+
 RucoCop extension that check RBS signatures.
 
 > DISCLAIMER: this extension is an ALPHA version, it could be not 100% stable
@@ -15,13 +17,18 @@ Please ⭐ if you like it.
 
 ## Install
 
-- Add to your Gemfile: `gem 'rubocop-rbs'` (and execute bundle)
+- Add to _Gemfile_: `gem 'rubocop-rbs'` (and execute bundle);
+- Add to _.rubocop.yml_:
+
+```yml
+require:
+  - rubocop-rbs
+```
 
 ## Usage
 
-- Execute `rubocop`
-
-To disable the cop:
+- Execute rubocop
+- To disable the cop:
 
 ```yml
 Rbs/MethodSignature:
