@@ -27,12 +27,39 @@ require:
 
 ## Usage
 
-- Execute rubocop
-- To disable the cop:
+- Execute rubocop: `bundle exec rubocop`
+- To skip the cop from some files:
 
 ```yml
 Rbs/MethodSignature:
-  Enabled: false
+  Exclude:
+    - main.rb
+```
+
+## Offenses
+
+- _Rbs/MethodSignature: signature error_: one or more signature errors in a RBS file:
+
+```
+main.rb:7:3: C: Rbs/MethodSignature: signature error, sig/main.rbs:1:0...1:3: Syntax error: cannot start a declaration, token=def (kDEF)
+  def test_required_positionals(key1, key2); end
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
+- _Rbs/MethodSignature: missing signature_: method signature not found in the RBS files:
+
+```
+main.rb:7:3: C: Rbs/MethodSignature: missing signature
+  def test_required_positionals(key1, key2); end
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
+- _Rbs/MethodSignature: signature mismatch_: method signature has different arguments from the one defined in the RBS files:
+
+```
+main.rb:7:3: C: Rbs/MethodSignature: signature mismatch, expected: (untyped, untyped, untyped) -> void
+  def test_required_positionals(key1, key2); end
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
 
 ## Do you like it? Star it!
