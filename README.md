@@ -17,7 +17,7 @@ Please ⭐ if you like it.
 
 ## Install
 
-- Add to _Gemfile_: `gem 'rubocop-rbs'` (and execute bundle);
+- Add to _Gemfile_: `gem 'rubocop-rbs', '~> 0.1.1'` (and execute bundle);
 - Add to _.rubocop.yml_:
 
 ```yml
