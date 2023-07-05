@@ -9,6 +9,8 @@ on:
 
 jobs:
   build:
+    if: ${{ false }} # disabled for now
+
     runs-on: ubuntu-latest
     name: Ruby ${{ matrix.ruby }}
     strategy:

@@ -74,7 +74,7 @@ module RuboCop
         end
 
         def arity_arg_match?(arity, rbs_args)
-          arity[:arg].to_i == rbs_args.required_positionals.count
+          arity[:arg].to_i == (rbs_args.required_positionals.count + rbs_args.trailing_positionals.count)
         end
 
         def arity_optarg_match?(arity, rbs_args)
